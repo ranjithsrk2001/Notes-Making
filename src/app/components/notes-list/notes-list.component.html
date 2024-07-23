@@ -1,0 +1,75 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> 
+<!-- header component srt-->
+
+
+
+
+<div class="tools-container1">
+    <div class="tools">
+      <ul class="tools-based">
+        <li class="tool-item">
+          <button class="tool-link" [class.active]="activeTool === 'All'" (click)="setActiveTool('All');getNotes()">All Notes</button>
+          <!-- <button class="tool-link active" (click)="getNotes()">All Notes</button> -->
+        </li>
+       
+        <li class="tool-item">
+          <button class="tool-link" [class.active]="activeTool === 'Education'" (click)="setActiveTool('Education');getByCategory('Education')">Education</button> 
+          <!-- <button class="tool-link" (click)="getByCategory('Social')">Social</button>  -->
+        </li>
+        <li class="tool-item">
+          <button class="tool-link" [class.active]="activeTool === 'Important'" (click)="setActiveTool('Important');getByCategory('Important')">Important</button>
+          <!-- <button class="tool-link"  (click)="getByCategory('Important')">Important</button> -->
+        </li>
+        <li class="tool-item">
+          <button class="tool-link" [class.active]="activeTool === 'Entertainment'" (click)="setActiveTool('Entertainment');getByCategory('Entertainment')">Entertainment</button>
+          <!-- <button class="tool-link"  (click)="getByCategory('Entertainment')">Entertainment</button> -->
+        </li>
+        <li class="tool-item search">
+          <input type="text"  [(ngModel)] = "searchNotes" (ngModelChange)="showList()">
+          <button class="tool-link" (click)="showList()"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </li>
+        
+        <li class="tool-item add-notes">
+          <button class="tool-link  active" (click)="handleAdd()"  href="#">Add Notes</button>
+        </li>
+      </ul>
+      
+    </div>
+</div>
+<!-- header component end -->
+<div class="card-container1">
+
+  @for (notes of notesList; track notes.id)
+  {
+    <div class="card">
+      <div class="card-title">{{notes.title}}</div>
+      <div class="card-content-wrapper">
+        <div class="card-content">
+          {{notes.content}}
+        </div>
+      </div>
+      <div class="card-category">Category: {{notes.category}}</div>
+      <div class="card-date">Last Updated : {{ notes.latestUpdatedate| date: 'medium' }}</div>
+      <div class="card-menu">
+        <a class="menu-button" (click)="toggleMenu(notes.id)"><i class="fas fa-chevron-circle-down"></i></a>
+        <!-- <div class="menu-dropdown" [ngStyle]="{ 'display': showDropdown ? 'block' : 'none' }"> -->
+          <div class="menu-dropdown" [ngStyle]="{ 'display': menuVisibility[notes.id] ? 'block' : 'none' }">
+
+            <button class="button button-edit"(click)="updateNotes(notes.id)">Edit</button>
+           <button class="button button-delete" (click)="deleteNotes(notes.id)">Delete</button>
+          
+          </div>
+      </div>
+    </div>
+  }
+  @empty {
+    Empty list of notes
+  } 
+ 
+</div>
+
+

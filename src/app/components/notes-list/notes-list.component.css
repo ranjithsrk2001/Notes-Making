@@ -1,0 +1,281 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: "Quicksand", sans-serif;
+  font-style: normal;
+}
+ .card-container1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 30px;
+  margin-bottom: 3rem;
+  
+}
+
+
+.card {
+  border-radius: 15px;
+  background: #fff;/*#e0e0e0;*/
+  /* box-shadow:  20px 20px 60px #bebebe,
+    -20px -20px 60px #ffffff;  */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  height: 250px; /* Set fixed height */
+  overflow: hidden; /* Hide overflow for card */
+  padding: 20px;
+  padding-bottom: 30px;
+  
+
+}
+
+.card-content-wrapper {
+  font-size: 15px;
+  /* height: calc(90% - 100px); */
+  height: 50%;
+  overflow-y:auto; /* Add vertical scrollbar when content overflows */
+  padding: 10px; /* Add padding for content */
+}
+
+/* Style the scrollbar for WebKit-based browsers (Chrome, Safari) */
+.card-content-wrapper::-webkit-scrollbar {
+  width: 10px; /* Set the width of the scrollbar */
+}
+
+.card-content-wrapper::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Background color of the scrollbar track */
+  border-radius: 10px; /* Adjust the radius to make it rounded */
+}
+
+.card-content-wrapper::-webkit-scrollbar-thumb {
+  background-color: #3C5B6F; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Adjust the radius to make it rounded */
+}
+
+.card-content-wrapper::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Color of the scrollbar thumb on hover */
+}
+
+
+.card-content{
+  font-size: 12px;
+
+}
+
+.card-title, .card-category, .card-date {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 5px 10px; /* Add padding for title and category */
+}
+
+.card-category {
+  color: #666;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 10px;
+}
+
+.button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-edit {
+  background-color: #9AC8CD;
+  color: white;
+}
+
+.button-delete {
+  background-color: #0E46A3;
+  color: white;
+}
+.card-menu {
+  position: relative;
+}
+
+.menu-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  
+}
+.menu-button i{
+  font-size: 20px;
+  transition-duration: 0.2s;
+  color: #006aff;
+}
+.menu-button i:hover{
+  color: #a0cfe5;
+}
+.menu-dropdown {
+  position: absolute;
+  top: -90px;
+  right: 20px;
+  background-color: #e3e3e3;
+  /* border: 1px solid #ccc; */
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  display: none;
+}
+
+.menu-dropdown.show {
+  display: block;
+}
+
+.menu-dropdown button {
+  display: block;
+  width: 100%;
+  margin-bottom: 5px;
+}
+
+.close-button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+
+}
+.close-button i{
+  font-size: 20px;
+  margin:5px ;
+}
+
+
+/* header css srt */
+*
+{
+   
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+}
+
+/* nav bar */
+
+.navbar {
+  background-color: #41B06E;
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.company-name {
+  font-size: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-btn {
+  text-decoration: none;
+  color: white;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+.profile-btn:hover {
+  background-color: white;
+  color: #333;
+}
+
+.logout-btn {
+  display: none; /* Initially hide logout button */
+}
+
+.tools-container1{
+  width: 100%;
+  padding:10px 30px 0 30px ;
+  position: sticky;
+  top: 0;
+}
+.tools-based {
+  list-style-type: none;
+  padding: 10px 20px; /* Padding for the entire navigation bar */
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  background-color: #ffffff;
+  border-radius: 50px;
+  font-size: small;
+}
+
+.tool-item {
+  margin-right: 10px; /* Adjust spacing between items */
+}
+
+.tool-link {
+ 
+  color: #006aff; /* Change link color as needed */
+  padding: 8px 12px; /* Padding for each navigation item */
+  border-radius: 50px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tool-link:hover {
+  color: #6c6b6b; /* Change link hover color as needed */
+}
+.tool-link.active {
+  color: #ffffff;
+  background-color: #006aff; /* Active link color */
+}
+
+.add-notes {
+  margin-left: auto;
+}
+.search {
+  flex: 1; /* Take up remaining space */
+  text-align: center;
+  border: 1px solid #ccc; /* Border for input */
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 4px 8px;
+  height: 40px;
+  margin: 0 80px;
+  background-color: #f1f3f6;
+}
+.search:hover{
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.search input[type="text"] {
+ width: 100%;
+  background-color: transparent;
+  padding: 6px 8px; /* Padding for input */
+  border: none; /* Border for input */
+ 
+}
+.search input:focus{
+  outline: none;
+  border: none;
+}
+.search img{
+  filter: sepia(100%) saturate(10000%) hue-rotate(220deg);
+
+ 
+}
+
+
+
+/* header css end */

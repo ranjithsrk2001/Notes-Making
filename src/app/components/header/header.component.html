@@ -1,0 +1,45 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<!-- <div class="navbar">
+  <div class="company-name">Notes</div>
+  <div class="profile">
+    <span class="signin-btn">Sign In</span>
+    <a href="#" class="profile-btn logout-btn">Logout</a>
+  </div>
+</div> -->
+
+
+<div class="tools-container">
+    <div class="tools">
+      <ul class="tools-based">
+        <li class="tool-item">
+          <button class="tool-link active" href="#">All Notes</button>
+        </li>
+        <li class="tool-item">
+           <button  class="tool-link" (click)="callMethod('Social')">Business</button>  
+        </li>
+        <li class="tool-item">
+          <!-- <button (click)="handleCategoryClick('Social')">Social</button> -->
+        </li>
+        <li class="tool-item">
+          <button class="tool-link" href="#">Important</button>
+        </li>
+        <li class="tool-item">
+          <button class="tool-link" href="#">Entertainment</button>
+        </li>
+        <li class="tool-item search">
+          <input type="text">
+          <button class="tool-link" href="#"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </li>
+        
+        <li class="tool-item add-notes">
+          <button class="tool-link  " (click)="handleAdd()"  href="#">Add Notes</button>
+        </li>
+      </ul>
+      
+    </div>
+</div>

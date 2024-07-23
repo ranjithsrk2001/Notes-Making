@@ -1,0 +1,20 @@
+footer {
+  background-color: #225ffb;
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  
+  width: 100%;
+}
+
+.container1 {
+ width: 100%;
+  
+}
+
+p {
+  margin: 0;
+}

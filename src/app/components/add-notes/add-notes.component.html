@@ -1,0 +1,43 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Create Note</title>
+
+</head>
+<body>
+
+<h2>Create Note</h2>
+
+<form (ngSubmit)="submitForm()" #form="ngForm">
+  <div class="container">
+    <div>
+      <label for="title">Title:</label><br>
+      <input type="text" id="title" name="title" [(ngModel)]="formData.title" required><br>
+
+      <!-- <input type="text" id="title" name="title" [(ngModel)]="formData.title" required><br> -->
+    </div>
+    <div>
+      <label for="content">Content:</label><br>
+      <textarea id="content" name="content" rows="4" cols="50" [(ngModel)]="formData.content" required></textarea><br>
+    </div>
+    <div>
+      <label for="category">Category:</label><br>
+      <select id="category" name="category" [(ngModel)]="formData.category" required>
+        <option value="" disabled selected>Select Category</option>
+
+        <option value="Education">Education</option>
+        <option value="Important">Important</option>
+        <option value="Entertainment">Entertainment</option>
+      </select><br>
+    </div>
+    <button type="submit">Save</button>
+</div>
+</form>
+
+</body>
+</html>
